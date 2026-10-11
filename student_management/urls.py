@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 
+
 urlpatterns = [
 
     path("admin/", admin.site.urls),
@@ -27,4 +28,7 @@ urlpatterns = [
         include("student_api.urls")
     ),
 
+    path("api/", include("articles.urls")),
+
 ]
+    

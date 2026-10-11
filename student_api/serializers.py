@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from .models import Student, Course
-
+from articles.models import Article
 
 class CourseSerializer(serializers.ModelSerializer):
 
@@ -17,6 +17,11 @@ class CourseSerializer(serializers.ModelSerializer):
 
         return value
 
+class ArticleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Article
+        fields = "__all__"
 
 class StudentSerializer(serializers.ModelSerializer):
 
