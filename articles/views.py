@@ -5,13 +5,10 @@ from .models import Article
 from .serializers import ArticleSerializer
 
 
-class ArticlePagination(PageNumberPagination):
-    page_size = 10
 
 
 class ArticleListView(generics.ListAPIView):
     serializer_class = ArticleSerializer
-    pagination_class = ArticlePagination
 
     def get_queryset(self):
         return Article.objects.filter(
