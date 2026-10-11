@@ -1,10 +1,8 @@
-from django.shortcuts import render
-from rest_framework.pagination import PageNumberPagination
 from rest_framework import generics
+
 from .models import Article
+from .pagination import CustomArticlePagination
 from .serializers import ArticleSerializer
-
-
 
 
 class ArticleListView(generics.ListAPIView):
@@ -15,3 +13,6 @@ class ArticleListView(generics.ListAPIView):
             is_published=True
         ).order_by("created_at", "id")
 
+
+class CustomArticleListView(ArticleListView):
+    pagination_class = CustomArticlePagination
