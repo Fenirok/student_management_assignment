@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'student_api',
     'articles.apps.ArticleConfig',
+    'dining.apps.DiningConfig',
 ]
 
 MIDDLEWARE = [
